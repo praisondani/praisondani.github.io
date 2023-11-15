@@ -1,35 +1,45 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif; /* Elegant and simple font */
     margin: 0;
     padding: 0;
     color: #333;
+    background-color: #f7f7f7; /* Light background */
 }
 
 .top-header {
-    background-color: rgb(255, 255, 255); /* or any color you prefer */
+    background-color: #f7f7f7; /* or any color you prefer */
     color: rgb(0, 0, 0);
     text-align: center;
     padding: 10px 0;
     width: 100%;
-    z-index: 1; /* Lower z-index than the sidebar */
+    z-index: 3; /* Lower z-index than the sidebar */
 }
 
 .top-header h1 {
+    font-size: 1.5em; /* Adjusted for better readability */
     margin: 0;
-    font-size: 3.14em; /* Adjust size as needed */
+    padding-left: 50px; /* Adjust if hamburger-menu is present */
+}
+
+.top-header h1, nav ul li a {
+    color: #333; /* Dark grey for contrast */
+    font-weight: 400; /* Regular weight */
 }
 
 header {
-    background-color: white; /* Matches the top header */
+    background-color: #ffffff; /* Matches the top header */
     color: black;
     padding: 20px 10px;
     width: 200px;
     position: fixed;
-    top: 0px; /* Height of the top header, adjust as needed */
+    left: 0;
+    top: 0; /* Height of the top header, adjust as needed */
     bottom: 0;
     overflow: auto;
     z-index: 2; /* Below the top header */
     box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    transform: translateX(0);
+    transition: transform 0.3s ease;
 }
 
 header h1 {
@@ -56,7 +66,7 @@ header h1 {
 
 @media screen and (max-width: 768px) {
     .top-header h1 {
-        display: none; /* Hides the h1 text */
+        padding-left: 10px; /* Choose appropriate padding */
     }
 
     .top-header h1 {
@@ -72,14 +82,15 @@ header h1 {
 
     header {
         width: 100%;
-        height: 0; /* Initially hidden */
-        overflow: hidden;
+        /* height: 0; /* Initially hidden */
+        /* overflow: hidden;
         transition: height 0.3s ease;
         position: fixed;
         display: none;
         background-color: white; /* Or your preferred color */
-        z-index: 0; /* Below the hamburger menu */
-        top: 0; /* Adjusted to cover the top */
+        /* z-index: 0; /* Below the hamburger menu */
+        /* top: 0; /* Adjusted to cover the top */
+        transform: translateX(-100%); /* Start off-screen */
     }
 
     nav ul {
@@ -106,12 +117,37 @@ header h1 {
     display: block;
     width: 120px; /* Adjust this to a suitable size */
     height: auto; /* This will maintain the aspect ratio */
-    margin-top: 0px; /* Negative value to move up */
-    margin-left: 0px; /* Negative value to move left */
+    margin-top: -20px; /* Negative value to move up */
+    margin-left: -10px; /* Negative value to move left */
     position: relative; /* To enable z-index */
     z-index: 3; /* Ensure it's above other elements */
 }
 
+/* Collapsed Sidebar */
+.collapsed-sidebar {
+    transform: translateX(-100%);
+}
+
+/* Toggle Sidebar Button */
+.toggle-sidebar {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 21px;
+    z-index: 5;
+}
+
+.toggle-sidebar span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+}
 
 nav ul {
     padding: 0;
@@ -129,20 +165,35 @@ nav ul li a {
     color: rgb(0, 0, 0);
     text-decoration: none;
     display: block;
+    padding: 12px; /* Adjust padding as needed */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
 }
 
 nav ul li a:hover {
-    background-color: rgb(179, 179, 179);
+    background-color: #4CAF50; /* Example hover background color */
+    color: white; /* Example hover text color */
 }
 
 section {
     margin-left: 250px; /* Adjust if the sidebar width changes */
     margin-top: 10px; /* Adjust based on the height of the top header */
     padding: 2px;
+    transition: margin-left 0.3s ease;
+}
+
+section h2 {
+    color: #2a4d69; /* Slightly darker shade for headers */
+    font-weight: 400;
+}
+
+/* Adjustments for links, buttons, and other elements */
+a, button {
+    color: #2a4d69; /* Accent color for interactive elements */
+    font-weight: 400;
 }
 
 footer {
-    background-color: #333; /* Footer background color */
+    background-color: #2a4d69; /* Footer background color */
     color: white; /* Footer text color */
     text-align: center; /* Center-align the text */
     padding: 5px 0; /* Reduce padding for a smaller height */

@@ -1,9 +1,8 @@
 body {
     font-family: 'Open Sans', sans-serif; /* Elegant and simple font */
     margin: 0;
-    padding: 10;
+    padding: 0px;
     color: #333;
-    margin-bottom: 5%;
     background-color: #f7f7f7; /* Light background */
 }
 
@@ -103,9 +102,20 @@ header h1 {
     }
 
     section {
-        margin-left: 0;
+        margin-left: 200px;
         margin-top: 60px; /* Adjust based on the height of the top header */
         padding: 20px;
+    }
+    section h3 {
+        font-size: 1.3em;
+    }
+
+    section li h4 {
+        font-size: 1.1em;
+    }
+
+    section li p {
+        font-size: 0.9em;
     }
 }
 
@@ -178,13 +188,83 @@ nav ul li a:hover {
 section {
     margin-left: 200px; /* Adjust if the sidebar width changes */
     margin-top: 10px; /* Adjust based on the height of the top header */
-    padding: 1.5px;
+    padding: 0px;
     transition: margin-left 0.3s ease;
 }
 
-section h2 {
+section h3 {
     color: #2a4d69; /* Slightly darker shade for headers */
     font-weight: 400;
+    margin-bottom: 20px;
+}
+
+section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+section li h4 {
+    color: #4CAF50; /* Theme color */
+    margin-bottom: 10px;
+}
+
+section li p {
+    font-size: 1em;
+    margin-bottom: 0px;
+}
+
+/* Skills section styling */
+
+.skills-category {
+    margin-bottom: 20px;
+}
+
+.skills-category h4 {
+    color: #4CAF50; /* Theme color */
+    margin-bottom: 10px;
+}
+
+.skills-category ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills-category ul li {
+    background-color: #e6f0ff;
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+    padding: 10px;
+}
+
+.skill {
+    background-color: #e6f0ff;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#competencies div {
+    margin-bottom: 20px;
+}
+
+.competencies-category h4 {
+    color: #4CAF50; /* Theme color */
+    margin-bottom: 10px;
+}
+
+.competencies-category p {
+    line-height: 1; /* Improve readability */
+}
+
+.credentials-category p {
+    line-height: 1; /* Improve readability */
 }
 
 /* Adjustments for links, buttons, and other elements */
@@ -209,12 +289,24 @@ footer {
     color: white; /* Footer text color */
     text-align: center; /* Center-align the text */
     padding: 5px 0; /* Reduce padding for a smaller height */
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     font-size: 0.8em; /* Smaller font size for minimalistic look */
     z-index: 2; /* To ensure it's above other content but below the sidebar */
 }
 
+.social-links {
+    margin-top: 10px;
+}
 
+.social-links a {
+    margin: 0 10px;
+    display: inline-block;
+}
 
+.social-links img {
+    width: 24px; /* Adjust size as needed */
+    height: auto;
+    vertical-align: middle;
+}

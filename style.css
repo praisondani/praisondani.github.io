@@ -1,8 +1,9 @@
 body {
     font-family: 'Open Sans', sans-serif; /* Elegant and simple font */
     margin: 0;
-    padding: 0;
+    padding: 10;
     color: #333;
+    margin-bottom: 5%;
     background-color: #f7f7f7; /* Light background */
 }
 
@@ -28,16 +29,16 @@ body {
 
 header {
     background-color: #ffffff; /* Matches the top header */
-    color: black;
+    color: rgb(0, 0, 0);
     padding: 20px 10px;
-    width: 200px;
+    width: 165px;
     position: fixed;
     left: 0;
     top: 0; /* Height of the top header, adjust as needed */
     bottom: 0;
     overflow: auto;
     z-index: 2; /* Below the top header */
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    box-shadow: 5px 0 15px rgba(40, 22, 101, 0.1); /* Subtle shadow effect */
     transform: translateX(0);
     transition: transform 0.3s ease;
 }
@@ -65,12 +66,9 @@ header h1 {
 }
 
 @media screen and (max-width: 768px) {
+    
     .top-header h1 {
-        padding-left: 10px; /* Choose appropriate padding */
-    }
-
-    .top-header h1 {
-        padding-left: 50px; /* Adjust if needed */
+        padding-left: 0px; /* Choose appropriate padding */
     }
     .hamburger-menu {
         display: block;
@@ -162,22 +160,25 @@ nav ul li {
 }
 
 nav ul li a {
-    color: rgb(0, 0, 0);
+    /*color: rgb(0, 0, 0); */
     text-decoration: none;
-    display: block;
-    padding: 12px; /* Adjust padding as needed */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+    /*display: flex; */
+    /*padding: 0px; */
+    transition: border-bottom 0.3s; /* Smooth transition for hover effect */
+    /* border-bottom: dashed #4CAF50; /* Visible border on hover */ /* Transparent border */
 }
 
 nav ul li a:hover {
-    background-color: #4CAF50; /* Example hover background color */
-    color: white; /* Example hover text color */
+    /* background-color: #4CAF50; /* Example hover background color */
+    /* color: white; /* Example hover text color */
+    border-bottom: 1.5px dashed #000000; /* Visible border on hover */
+
 }
 
 section {
-    margin-left: 250px; /* Adjust if the sidebar width changes */
+    margin-left: 200px; /* Adjust if the sidebar width changes */
     margin-top: 10px; /* Adjust based on the height of the top header */
-    padding: 2px;
+    padding: 1.5px;
     transition: margin-left 0.3s ease;
 }
 
@@ -190,6 +191,17 @@ section h2 {
 a, button {
     color: #2a4d69; /* Accent color for interactive elements */
     font-weight: 400;
+}
+
+#resume {
+    margin: 20px;
+}
+.section-title {
+    font-weight: bold;
+    color: #333;
+}
+.section-content {
+    margin-bottom: 20px;
 }
 
 footer {

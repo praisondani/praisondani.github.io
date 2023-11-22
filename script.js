@@ -1,75 +1,105 @@
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  // Handle the form submission here, like sending data to a server
+});
 
-/* document.getElementById('contact-form').addEventListener('submit', function(event){
-    event.preventDefault();
-    alert('Form submitted! This is a placeholder functionality.');
-}); */
 
 document.querySelector('.hamburger-menu').addEventListener('click', function() {
-    const sidebar = document.querySelector('header');
-    const content = document.querySelector('section');
-    if (sidebar.style.transform === 'translateX(-100%)') {
-        sidebar.style.transform = 'translateX(0)';
-        content.style.marginLeft = '200px'; // Match sidebar width
-    } else {
-        sidebar.style.transform = 'translateX(-100%)';
-        content.style.marginLeft = '0';
-    }
+  const sidebar = document.querySelector('header');
+  const content = document.querySelector('main'); // Ensure you have a <main> tag wrapping your main content
+  sidebar.classList.toggle('collapsed-sidebar');
+  content.classList.toggle('expanded-content');
 });
 
-
-document.querySelector('.toggle-sidebar').addEventListener('click', function() {
-    const sidebar = document.querySelector('header');
-    const content = document.querySelector('section');
-    sidebar.classList.toggle('collapsed-sidebar');
-    content.classList.toggle('collapsed-content');
-});
-
-// Assuming the JSON file is stored on the server
+// Assuming the JSON file is stored on the server and its structure is correct
 fetch('/centralized_resume.json')
-    .then(response => response.json())
-    .then(data => {
-        displayResume(data);
-    })
-    .catch(error => console.error('Error:', error));
+  .then(response => {
+      if (!response.ok) {
+          throw new Error('Network response was not ok');
+      }
+      return response.json();
+  })
+  .then(data => {
+      displayResume(data);
+  })
+  .catch(error => {
+      console.error('Error fetching resume data:', error);
+      // Display a user-friendly error message or fallback content
+  });
 
-// Defining the resume data directly in the script
+  //personalInfoDiv.textContent = `Name: ${personalInfo.name}, Contact: ${personalInfo.contact}, Email: ${personalInfo.email}, LinkedIn: ${personalInfo.linkedin}, Address: ${personalInfo.address}`;
+
+// function displayResume(resumeData) {
+//   const resumeContainer = document.getElementById('resume');
+//   if (!resumeContainer) return;
+
+//   // Display personal information (Example, adapt as needed)
+//   const personalInfo = resumeData.personal_info;
+//   if (personalInfo) {
+//       const personalInfoDiv = document.createElement('div');
+//       personalInfoDiv.textContent = `Name: ${personalInfo.name}, Contact: ${personalInfo.contact}, Email: ${personalInfo.email}, LinkedIn: ${personalInfo.linkedin}, Address: ${personalInfo.address}`;
+//       resumeContainer.appendChild(personalInfoDiv);
+//   }
+
+//   // Display other resume sections (Example, adapt as needed)
+//   resumeData.sections.forEach(section => {
+//       const sectionDiv = document.createElement('div');
+//       sectionDiv.classList.add('section');
+
+//       const title = document.createElement('h4');
+//       title.textContent = section.title;
+//       sectionDiv.appendChild(title);
+
+//       const content = document.createElement('p');
+//       content.textContent = section.content; // Assuming 'content' is a string
+//       sectionDiv.appendChild(content);
+
+//       resumeContainer.appendChild(sectionDiv);
+//   });
+// }
+
 
 function displayResume(resumeData) {
-    const resumeContainer = document.getElementById('resume');
+  const resumeContainer = document.getElementById('resume');
+  if (!resumeContainer) return;
 
-    // Display personal information
-    console.log(resumeData);
-    const personalInfo = resumeData.personal_info;
-    const personalInfoDiv = document.createElement('div');
-    personalInfoDiv.innerHTML = `<strong>Name:</strong> ${personalInfo.name}<br>
-                                 <strong>Contact:</strong> ${personalInfo.contact}<br>
-                                 <strong>Email:</strong> ${personalInfo.email}<br>
-                                 <strong>LinkedIn:</strong> ${personalInfo.linkedin}<br>
-                                 <strong>Address:</strong> ${personalInfo.address}`;
-    resumeContainer.appendChild(personalInfoDiv);
+  // Iterate over each section in the resume data
+  resumeData.sections.forEach(section => {
+      // Find the corresponding container for each section
+      const containerId = section.title.toLowerCase().replace(/\s+/g, '-') + '-container';
+      const sectionContainer = document.getElementById(containerId);
+      if (!sectionContainer) return;
 
-    // Display each section
-    resumeData.sections.forEach(section => {
-        const sectionDiv = document.createElement('div');
-        sectionDiv.classList.add('section');
+      const sectionDiv = document.createElement('div');
+      sectionDiv.classList.add('section');
 
-        const title = document.createElement('div');
-        title.classList.add('section-title');
-        title.textContent = section.title;
-        sectionDiv.appendChild(title);
+      // Add section title
+      const title = document.createElement('h4');
+      title.textContent = section.title;
+      sectionDiv.appendChild(title);
 
-        const content = document.createElement('div');
-        content.classList.add('section-content');
-        section.content.forEach(item => {
-            content.innerHTML += `<div><strong>${item.position}</strong> at ${item.organization} (${item.date})</div>`;
-            item.description.forEach(desc => {
-                content.innerHTML += `<div>${desc}</div>`;
-            });
-        });
-        sectionDiv.appendChild(content);
+      // Process each item in the content array
+      section.content.forEach(item => {
+          const contentDiv = document.createElement('div');
 
-        resumeContainer.appendChild(sectionDiv);
-    });
+          // Add position and organization if available (mainly for Work Experience and Education)
+          if (item.position) {
+              const positionDiv = document.createElement('div');
+              positionDiv.innerHTML = `<strong>${item.position}</strong>, ${item.organization}, ${item.date}`;
+              contentDiv.appendChild(positionDiv);
+          }
+
+          // Add descriptions
+          item.description.forEach(desc => {
+              const descP = document.createElement('p');
+              descP.textContent = desc;
+              contentDiv.appendChild(descP);
+          });
+
+          //sectionDiv.appendChild(contentDiv);
+          sectionContainer.appendChild(contentDiv);
+      });
+
+      resumeContainer.appendChild(sectionDiv);
+  });
 }
-
-

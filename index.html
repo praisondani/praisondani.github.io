@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <nav class="sidenav">
+  <nav>
     <a href="#summary">Summary</a>
     <a href="#experience">Experience</a>
     <a href="#skills">Skills</a>
@@ -18,130 +18,81 @@
     <a href="#apps">Apps</a>
   </nav>
 
-  <div class="page">
+  <main>
 
     <header>
       <h1>Praison Dani George</h1>
-      <p class="tagline">Senior Software Engineer · API &amp; AI Systems · Houston, TX</p>
-      <p class="contact">
-        <a href="https://www.linkedin.com/in/praisondani/" target="_blank" rel="noopener">LinkedIn</a>
-        &nbsp;·&nbsp;
+      <p>Senior Software Engineer · Houston, TX ·
+        <a href="https://www.linkedin.com/in/praisondani/" target="_blank" rel="noopener">LinkedIn</a> ·
         <a href="https://github.com/praisondani" target="_blank" rel="noopener">GitHub</a>
       </p>
     </header>
 
-    <main>
+    <section id="summary">
+      <h2>Summary</h2>
+      <p>Senior Software Engineer with 9+ years of experience delivering enterprise-grade APIs, cloud integrations, and distributed systems across insurance, pharmaceutical, and financial domains. Expertise in API-led architecture, system modernization, CI/CD, and production reliability. Recently expanded into applied AI/LLM engineering — RAG pipelines, intelligent automation, and data enrichment using generative AI. Strong background in MuleSoft, Laravel, and Linux infrastructure.</p>
+    </section>
 
-      <section id="summary">
-        <h2>Summary</h2>
-        <p>Senior Software Engineer with 9+ years of experience delivering enterprise-grade APIs, cloud integrations, and large-scale distributed systems across insurance, pharmaceutical, and financial domains. Proven expertise in API-led architecture, system modernization, CI/CD, and production reliability. Recently expanded into applied AI/LLM engineering, building intelligent automation and data enrichment pipelines using generative AI and scalable backend systems. Strong background in MuleSoft, Laravel, Linux infrastructure, and end-to-end system ownership from design through production support.</p>
-      </section>
+    <section id="experience">
+      <h2>Experience</h2>
 
-      <section id="experience">
-        <h2>Experience</h2>
+      <p><strong>Self Employed</strong> · Houston, TX · May 2025 – Present</p>
+      <ul>
+        <li>Design and operate production web applications and APIs serving 40k+ monthly users.</li>
+        <li>Architect RAG systems over structured datasets for grounded AI-driven search and recommendations.</li>
+        <li>Build semantic retrieval pipelines using embeddings and vector search (Typesense).</li>
+        <li>Develop scalable backends in Laravel/PHP with React/Next.js frontends.</li>
+        <li>Integrate LLM providers (OpenAI, Gemini) via OpenRouter for dynamic model routing.</li>
+        <li>Automate zero-downtime deployments with GitHub Actions, Nginx, and SSL on Linux.</li>
+      </ul>
 
-        <div class="entry">
-          <div class="entry-header">
-            <strong>Self Employed</strong>
-            <span class="meta">Houston, TX · May 2025 – Present</span>
-          </div>
-          <ul>
-            <li>Design and operate production web applications and APIs serving 40k+ monthly users, owning full SDLC from architecture through deployment and support.</li>
-            <li>Architect and implement Retrieval-Augmented Generation (RAG) systems over structured datasets, enabling grounded AI-driven search, recommendations, and decision support.</li>
-            <li>Build semantic retrieval pipelines using embeddings, vector search (Typesense), and hybrid search strategies to enhance API-driven data discovery.</li>
-            <li>Design and develop scalable backend systems in Laravel/PHP with React/Next.js frontends.</li>
-            <li>Implement event-driven and asynchronous processing pipelines (Redis queues, workers) for AI workflows, data ingestion, and transformation.</li>
-            <li>Integrate LLM providers (OpenAI, Gemini) via OpenRouter, enabling dynamic model routing for reliability, latency optimization, and cost efficiency.</li>
-            <li>Automate zero-downtime deployments using GitHub Actions on Linux (Ubuntu) with Nginx and SSL.</li>
-          </ul>
-        </div>
+      <p><strong>Technology Analyst</strong> · Infosys Limited · Houston, TX · Aug 2016 – Apr 2025</p>
+      <p>Enterprise integration and API solutions for Fortune 500 clients in insurance, pharmaceutical, and financial sectors.</p>
+      <ul>
+        <li>Designed and maintained Mule 4 APIs; migrated integrations from Mule 3.9 to Mule 4.</li>
+        <li>Migrated legacy Java and .NET services into REST-based MuleSoft architectures.</li>
+        <li>Built integrations with Database, IBM MQ, SOAP, HTTP, Object Store, and Batch Processing connectors.</li>
+        <li>Developed complex DataWeave transformations for large data volumes.</li>
+        <li>Managed CI/CD pipelines with Azure DevOps and GitLab.</li>
+        <li>Acted as SME for cloud migration and knowledge transfer.</li>
+        <li>Selected clients: American Insurance Company (CloudHub 1.0 → 2.0), Swiss Pharmaceutical Company (Mule 3.9 → 4, Solace PubSub+).</li>
+      </ul>
+    </section>
 
-        <div class="entry">
-          <div class="entry-header">
-            <strong>Technology Analyst</strong>
-            <span class="meta">Infosys Limited · Houston, TX · Aug 2016 – Apr 2025</span>
-          </div>
-          <p class="entry-desc">Delivered enterprise integration and API solutions for Fortune 500 insurance, pharmaceutical, and financial clients. Designed and supported high-availability distributed systems handling critical business workflows and strict SLAs.</p>
-          <ul>
-            <li>Designed, developed, and maintained Mule 4 APIs; migrated integrations from Mule 3.9 to Mule 4, modernizing legacy systems into scalable API-led architectures.</li>
-            <li>Migrated legacy Java and .NET services into modern REST-based MuleSoft architectures.</li>
-            <li>Built integrations using Database, IBM MQ, SOAP, HTTP, Object Store, Caching, Async Scope, Batch Processing, and messaging connectors.</li>
-            <li>Developed complex DataWeave transformations for large data volumes.</li>
-            <li>Implemented security policies, validations, and governance standards for regulated environments.</li>
-            <li>Managed CI/CD pipelines with Azure DevOps and GitLab for automated builds and deployments.</li>
-            <li>Provided production support, incident troubleshooting, and root cause analysis.</li>
-            <li>Acted as SME for cloud migration and knowledge transfer across teams.</li>
-          </ul>
-          <p class="entry-clients"><strong>Selected clients:</strong> American Insurance Company (CloudHub 1.0 → 2.0 migration, policyholder portals), Swiss Pharmaceutical Company (Mule 3.9 → 4 migration, Solace PubSub+ event-driven integrations).</p>
-        </div>
+    <section id="skills">
+      <h2>Skills</h2>
+      <p><strong>Integration</strong> — MuleSoft (Mule 4/3.9), DataWeave, REST/SOAP, Solace PubSub+</p>
+      <p><strong>Backend</strong> — Laravel (PHP), REST APIs</p>
+      <p><strong>Frontend</strong> — React, Next.js, Tailwind</p>
+      <p><strong>AI / LLM</strong> — OpenAI, Gemini (Vertex AI), OpenRouter, RAG pipelines, prompt engineering</p>
+      <p><strong>Infrastructure</strong> — Linux, Nginx, Docker, Redis, GitHub Actions, Azure DevOps, GitLab</p>
+      <p><strong>Databases</strong> — Oracle, SQL Server, MySQL, SQLite, S3/R2</p>
+      <p><strong>Tools</strong> — Splunk, Postman, SoapUI, Jira, Confluence</p>
+    </section>
 
-      </section>
+    <section id="education">
+      <h2>Education</h2>
+      <p>M.Tech · Network and Internet Engineering · Karunya Institute of Technology and Sciences · 2016</p>
+      <p>B.Tech · Information Technology · Mahatma Gandhi University · 2014</p>
+    </section>
 
-      <section id="skills">
-        <h2>Skills</h2>
-        <dl>
-          <dt>Integration</dt>
-          <dd>MuleSoft (Mule 4/3.9), API-led connectivity, DataWeave, REST/SOAP, Solace PubSub+</dd>
-          <dt>Backend</dt>
-          <dd>Laravel (PHP), REST APIs, distributed systems design</dd>
-          <dt>Frontend</dt>
-          <dd>React, Next.js, Tailwind</dd>
-          <dt>AI / LLM</dt>
-          <dd>OpenAI (GPT-4o), Gemini (Vertex AI), OpenRouter, RAG pipelines (chunking, embeddings, vector search), prompt engineering, LLM failover &amp; cost optimization</dd>
-          <dt>Search</dt>
-          <dd>Typesense (vector search, hybrid search)</dd>
-          <dt>Infrastructure</dt>
-          <dd>Linux (Ubuntu), Nginx, Docker, Redis, GitHub Actions, Azure DevOps, GitLab, CI/CD, VPS deployment</dd>
-          <dt>Databases</dt>
-          <dd>Oracle, SQL Server, MySQL, SQLite, S3/R2 object storage</dd>
-          <dt>Monitoring</dt>
-          <dd>Splunk, Postman, SoapUI, ServiceNow, Jira, Confluence</dd>
-        </dl>
-      </section>
+    <section id="credentials">
+      <h2>Credentials</h2>
+      <p>Certified MuleSoft Developer (Mule 4) · Valid until December 2026</p>
+    </section>
 
-      <section id="education">
-        <h2>Education</h2>
-        <p>M.Tech · Network and Internet Engineering — Karunya Institute of Technology and Sciences, India · 2016</p>
-        <p>B.Tech · Information Technology — Mahatma Gandhi University, India · 2014</p>
-      </section>
-
-      <section id="credentials">
-        <h2>Credentials</h2>
-        <ul>
-          <li>Certified MuleSoft Developer (Mule 4) — Valid until December 2026</li>
-        </ul>
-      </section>
-
-      <section id="apps">
-        <h2>Apps</h2>
-        <div class="apps-grid">
-          <a class="app-card" href="https://christianpicks.com" target="_blank" rel="noopener">
-            <strong>ChristianPicks</strong>
-            <span>christianpicks.com</span>
-          </a>
-          <a class="app-card" href="https://finelysourced.com" target="_blank" rel="noopener">
-            <strong>FinelySourced</strong>
-            <span>finelysourced.com</span>
-          </a>
-          <a class="app-card" href="https://recipebee.app" target="_blank" rel="noopener">
-            <strong>RecipeBee</strong>
-            <span>recipebee.app</span>
-          </a>
-        </div>
-      </section>
-
-    </main>
-
-    <footer>
+    <section id="apps">
+      <h2>Apps</h2>
       <p>
-        <a href="https://www.linkedin.com/in/praisondani/" target="_blank" rel="noopener">LinkedIn</a>
-        &nbsp;·&nbsp;
-        <a href="https://github.com/praisondani" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://christianpicks.com" target="_blank" rel="noopener">ChristianPicks</a> ·
+        <a href="https://finelysourced.com" target="_blank" rel="noopener">FinelySourced</a> ·
+        <a href="https://recipebee.app" target="_blank" rel="noopener">RecipeBee</a>
       </p>
-      <p>© 2026 Praison Dani George</p>
-    </footer>
+    </section>
 
-  </div>
+    <footer>© 2026 Praison Dani George</footer>
+
+  </main>
 
 </body>
 </html>

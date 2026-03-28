@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <nav>
+  <nav id="sidenav">
     <a href="#summary">Summary</a>
     <a href="#experience">Experience</a>
     <a href="#skills">Skills</a>
@@ -22,8 +22,10 @@
 
     <header>
       <h1>Praison Dani George</h1>
-      <p>Senior Software Engineer · Houston, TX ·
-        <a href="https://www.linkedin.com/in/praisondani/" target="_blank" rel="noopener">LinkedIn</a> ·
+      <p class="sub">Senior Software Engineer · Houston, TX</p>
+      <p class="links">
+        <a href="https://www.linkedin.com/in/praisondani/" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="dot">·</span>
         <a href="https://github.com/praisondani" target="_blank" rel="noopener">GitHub</a>
       </p>
     </header>
@@ -36,38 +38,73 @@
     <section id="experience">
       <h2>Experience</h2>
 
-      <p><strong>Self Employed</strong> · Houston, TX · May 2025 – Present</p>
-      <ul>
-        <li>Design and operate production web applications and APIs serving 40k+ monthly users.</li>
-        <li>Architect RAG systems over structured datasets for grounded AI-driven search and recommendations.</li>
-        <li>Build semantic retrieval pipelines using embeddings and vector search (Typesense).</li>
-        <li>Develop scalable backends in Laravel/PHP with React/Next.js frontends.</li>
-        <li>Integrate LLM providers (OpenAI, Gemini) via OpenRouter for dynamic model routing.</li>
-        <li>Automate zero-downtime deployments with GitHub Actions, Nginx, and SSL on Linux.</li>
-      </ul>
+      <div class="role">
+        <div class="role-title">
+          <strong>Self Employed</strong>
+          <span class="tenure">May 2025 – Present</span>
+        </div>
+        <p class="role-meta">Houston, TX</p>
+        <ul>
+          <li>Design and operate production web applications and APIs serving 40k+ monthly users.</li>
+          <li>Architect RAG systems over structured datasets for grounded AI-driven search and recommendations.</li>
+          <li>Build semantic retrieval pipelines using embeddings and vector search (Typesense).</li>
+          <li>Develop scalable backends in Laravel/PHP with React/Next.js frontends.</li>
+          <li>Integrate LLM providers (OpenAI, Gemini) via OpenRouter for dynamic model routing.</li>
+          <li>Automate zero-downtime deployments with GitHub Actions, Nginx, and SSL on Linux.</li>
+        </ul>
+      </div>
 
-      <p><strong>Technology Analyst</strong> · Infosys Limited · Houston, TX · Aug 2016 – Apr 2025</p>
-      <p>Enterprise integration and API solutions for Fortune 500 clients in insurance, pharmaceutical, and financial sectors.</p>
-      <ul>
-        <li>Designed and maintained Mule 4 APIs; migrated integrations from Mule 3.9 to Mule 4.</li>
-        <li>Migrated legacy Java and .NET services into REST-based MuleSoft architectures.</li>
-        <li>Built integrations with Database, IBM MQ, SOAP, HTTP, Object Store, and Batch Processing connectors.</li>
-        <li>Developed complex DataWeave transformations for large data volumes.</li>
-        <li>Managed CI/CD pipelines with Azure DevOps and GitLab.</li>
-        <li>Acted as SME for cloud migration and knowledge transfer.</li>
-        <li>Selected clients: American Insurance Company (CloudHub 1.0 → 2.0), Swiss Pharmaceutical Company (Mule 3.9 → 4, Solace PubSub+).</li>
-      </ul>
+      <div class="role">
+        <div class="role-title">
+          <strong>Technology Analyst</strong>
+          <span class="tenure">Aug 2016 – Apr 2025</span>
+        </div>
+        <p class="role-meta">Infosys Limited · Houston, TX</p>
+        <p class="role-desc">Enterprise integration and API solutions for Fortune 500 clients in insurance, pharmaceutical, and financial sectors.</p>
+        <ul>
+          <li>Designed and maintained Mule 4 APIs; migrated integrations from Mule 3.9 to Mule 4.</li>
+          <li>Migrated legacy Java and .NET services into REST-based MuleSoft architectures.</li>
+          <li>Built integrations with Database, IBM MQ, SOAP, HTTP, Object Store, and Batch Processing connectors.</li>
+          <li>Developed complex DataWeave transformations for large data volumes.</li>
+          <li>Managed CI/CD pipelines with Azure DevOps and GitLab.</li>
+          <li>Acted as SME for cloud migration and knowledge transfer.</li>
+          <li>Selected clients: American Insurance Company (CloudHub 1.0 → 2.0), Swiss Pharmaceutical Company (Mule 3.9 → 4, Solace PubSub+).</li>
+        </ul>
+      </div>
     </section>
 
     <section id="skills">
       <h2>Skills</h2>
-      <p><strong>Integration</strong> — MuleSoft (Mule 4/3.9), DataWeave, REST/SOAP, Solace PubSub+</p>
-      <p><strong>Backend</strong> — Laravel (PHP), REST APIs</p>
-      <p><strong>Frontend</strong> — React, Next.js, Tailwind</p>
-      <p><strong>AI / LLM</strong> — OpenAI, Gemini (Vertex AI), OpenRouter, RAG pipelines, prompt engineering</p>
-      <p><strong>Infrastructure</strong> — Linux, Nginx, Docker, Redis, GitHub Actions, Azure DevOps, GitLab</p>
-      <p><strong>Databases</strong> — Oracle, SQL Server, MySQL, SQLite, S3/R2</p>
-      <p><strong>Tools</strong> — Splunk, Postman, SoapUI, Jira, Confluence</p>
+      <div class="skill-list">
+        <div class="skill-row">
+          <span class="skill-label">Integration</span>
+          <span>MuleSoft (Mule 4/3.9), DataWeave, REST/SOAP, Solace PubSub+</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Backend</span>
+          <span>Laravel (PHP), REST APIs, distributed systems</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Frontend</span>
+          <span>React, Next.js, Tailwind</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">AI / LLM</span>
+          <span>OpenAI, Gemini (Vertex AI), OpenRouter, RAG pipelines, prompt engineering</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Infrastructure</span>
+          <span>Linux, Nginx, Docker, Redis, GitHub Actions, Azure DevOps, GitLab</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Databases</span>
+          <span>Oracle, SQL Server, MySQL, SQLite, S3/R2</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Tools</span>
+          <span>Splunk, Postman, SoapUI, Jira, Confluence</span>
+        </div>
+      </div>
     </section>
 
     <section id="education">
@@ -83,16 +120,33 @@
 
     <section id="apps">
       <h2>Apps</h2>
-      <p>
-        <a href="https://christianpicks.com" target="_blank" rel="noopener">ChristianPicks</a> ·
-        <a href="https://finelysourced.com" target="_blank" rel="noopener">FinelySourced</a> ·
+      <div class="app-links">
+        <a href="https://christianpicks.com" target="_blank" rel="noopener">ChristianPicks</a>
+        <a href="https://finelysourced.com" target="_blank" rel="noopener">FinelySourced</a>
         <a href="https://recipebee.app" target="_blank" rel="noopener">RecipeBee</a>
-      </p>
+      </div>
     </section>
 
     <footer>© 2026 Praison Dani George</footer>
 
   </main>
+
+  <script>
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('#sidenav a');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(a => a.classList.remove('active'));
+          const active = document.querySelector(`#sidenav a[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+
+    sections.forEach(s => observer.observe(s));
+  </script>
 
 </body>
 </html>

@@ -1,402 +1,160 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --fg: #111;
+  --muted: #555;
+  --border: #ddd;
+  --max-width: 680px;
+}
+
 body {
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    padding: 0px;
-    color: #333;
-    background-color: #f7f7f7; /* Light background */
-    height: 100%;
-    flex-direction: column;
-    min-height: 100%;
-}
-
-.top-header {
-    background-color: #f7f7f7;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    padding: 10px 0;
-    width: 100%;
-    z-index: 3; /* Lower z-index than the sidebar */
-}
-
-.top-header h1 {
-    font-size: 1.5em; /* Adjusted for better readability */
-    margin: 0;
-    padding-left: 50px; /* Adjust if hamburger-menu is present */
-}
-
-.top-header h1, nav ul li a {
-    color: #333; /* Dark grey for contrast */
-    font-weight: 400; /* Regular weight */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--fg);
+  background: #fff;
+  padding: 0 1rem;
 }
 
 header {
-    background-color: #ffffff; /* Matches the top header */
-    color: rgb(0, 0, 0);
-    padding: 20px 10px;
-    width: 165px;
-    position: fixed;
-    left: 0;
-    top: 0; /* Height of the top header, adjust as needed */
-    bottom: 0;
-    overflow: auto;
-    z-index: 2; /* Below the top header */
-    box-shadow: 5px 0 15px rgba(40, 22, 101, 0.1); /* Subtle shadow effect */
-    transform: translateX(0);
-    transition: transform 0.3s ease;
+  max-width: var(--max-width);
+  margin: 4rem auto 3rem;
 }
 
 header h1 {
-    text-align: center;
-    margin-top: 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
-/* Hamburger Menu Style */
-.hamburger-menu {
-    display: none; /* Hidden by default */
-    cursor: pointer;
-    position: absolute;
-    top: 15px;
-    left: 20px;
+header .tagline {
+  color: var(--muted);
+  margin-top: 0.25rem;
+  font-size: 0.95rem;
 }
 
-.hamburger-menu span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px;
-    background-color: black;
+header nav {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
 }
 
-@media screen and (max-width: 768px) {
-    
-    .top-header h1 {
-        padding-left: 0px; /* Choose appropriate padding */
-    }
-    .hamburger-menu {
-        display: block;
-        position: absolute;
-        top: 15px;
-        left: 20px;
-        z-index: 5; /* Ensures it's above other elements */
-    }
-
-    header {
-        width: 100%;
-        /* height: 0; /* Initially hidden */
-        /* overflow: hidden;
-        transition: height 0.3s ease;
-        position: fixed;
-        display: none;
-        background-color: white; /* Or your preferred color */
-        /* z-index: 0; /* Below the hamburger menu */
-        /* top: 0; /* Adjusted to cover the top */
-        transform: translateX(-100%); /* Start off-screen */
-    }
-
-    nav ul {
-        display: block;
-        padding: 0; /* Reset padding */
-        margin-top: 20px; /* Space below the top header */
-    }
-
-    nav ul li {
-        text-align: center;
-        padding: 12px 0;
-    }
-
-    section {
-        margin-left: 0px;
-        margin-top: 60px; /* Adjust based on the height of the top header */
-        padding: 0px;
-    }
-    section h3 {
-        font-size: 1.3em;
-    }
-
-    section li h4 {
-        font-size: 1.1em;
-    }
-
-    section li p {
-        font-size: 0.9em;
-    }
+header nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
 }
 
-/* Hamburger styling ends */
-
-#logo {
-    display: block;
-    width: 120px; /* Adjust this to a suitable size */
-    height: auto; /* This will maintain the aspect ratio */
-    margin-top: -20px; /* Negative value to move up */
-    margin-left: -10px; /* Negative value to move left */
-    position: relative; /* To enable z-index */
-    z-index: 3; /* Ensure it's above other elements */
+header nav a:hover {
+  color: var(--fg);
+  text-decoration: underline;
 }
 
-/* Collapsed Sidebar */
-.collapsed-sidebar {
-    transform: translateX(-100%);
-}
-
-/* Toggle Sidebar Button */
-.toggle-sidebar {
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    left: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 21px;
-    z-index: 5;
-}
-
-.toggle-sidebar span {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: black;
-}
-
-nav ul {
-    padding: 0;
-    list-style-type: none;
-    margin: 0;
-}
-
-nav ul li {
-    padding: 8px;
-    margin-bottom: 7px;
-    text-align: left;
-}
-
-nav ul li a {
-    /*color: rgb(0, 0, 0); */
-    text-decoration: none;
-    /*display: flex; */
-    /*padding: 0px; */
-    transition: border-bottom 0.3s; /* Smooth transition for hover effect */
-    /* border-bottom: dashed #4CAF50; /* Visible border on hover */ /* Transparent border */
-}
-
-nav ul li a:hover {
-    /* background-color: #4CAF50; /* Example hover background color */
-    /* color: white; /* Example hover text color */
-    border-bottom: 1.5px dashed #000000; /* Visible border on hover */
-    text-decoration: underline;
-
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 section {
-    margin-left: 200px; /* Adjust if the sidebar width changes */
-    margin-top: 10px; /* Adjust based on the height of the top header */
-    padding: 0px;
-    transition: margin-left 0.3s ease;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
 }
 
-section h3 {
-    color: #2a4d69; /* Slightly darker shade for headers */
-    font-weight: 400;
-    margin-bottom: 20px;
+section:last-child {
+  border-bottom: 1px solid var(--border);
 }
 
-section ul {
-    list-style-type: none;
-    padding: 0;
+h2 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
 }
 
-section li h4 {
-    color: #4CAF50; /* Theme color */
-    margin-bottom: 10px;
+.entry {
+  margin-bottom: 1.25rem;
 }
 
-section li p {
-    font-size: 1em;
-    margin-bottom: 0px;
+.entry:last-child {
+  margin-bottom: 0;
 }
 
-/* Skills section styling */
-
-.skills-category {
-    margin-bottom: 20px;
+.entry-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
-.skills-category h4 {
-    color: #4CAF50; /* Theme color */
-    margin-bottom: 10px;
+.meta {
+  color: var(--muted);
+  font-size: 0.875rem;
 }
 
-.skills-category ul {
-    list-style-type: none;
-    padding: 0;
+ul {
+  list-style: disc;
+  padding-left: 1.25rem;
 }
 
-.skills-category ul li {
-    background-color: #e6f0ff;
-    margin: 5px 0;
-    padding: 5px;
-    border-radius: 5px;
+ul li {
+  margin-bottom: 0.35rem;
+  font-size: 0.95rem;
 }
 
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 10px;
-    padding: 10px;
+dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.5rem 1.5rem;
 }
 
-.skill {
-    background-color: #e6f0ff;
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
+dt {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--muted);
+  padding-top: 0.1rem;
 }
 
-#competencies div {
-    margin-bottom: 20px;
-}
-
-.competencies-category h4 {
-    color: #4CAF50; /* Theme color */
-    margin-bottom: 10px;
-}
-
-.competencies-category p {
-    line-height: 1; /* Improve readability */
-}
-
-.credentials-category p {
-    line-height: 1; /* Improve readability */
-}
-
-/* Adjustments for links, buttons, and other elements */
-a, button {
-    color: #2a4d69; /* Accent color for interactive elements */
-    font-weight: 400;
-}
-
-#resume {
-    margin: 20px;
-    padding-left: 200px;
-}
-.section-title {
-    font-weight: bold;
-    color: #333;
-}
-.section-content {
-    margin-bottom: 20px;
+dd {
+  font-size: 0.95rem;
 }
 
 footer {
-    background-color: #2a4d69; /* Footer background color */
-    color: white; /* Footer text color */
-    text-align: center; /* Center-align the text */
-    padding: 5px 0; /* Reduce padding for a smaller height */
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    font-size: 0.8em; /* Smaller font size for minimalistic look */
-    z-index: 2; /* To ensure it's above other content but below the sidebar */
-    margin-top: auto;
+  max-width: var(--max-width);
+  margin: 3rem auto 4rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
-.social-links {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+footer a {
+  color: var(--muted);
 }
 
-.social-links a {
-    margin: 0 10px;
-    display: inline-block;
+footer a:hover {
+  color: var(--fg);
 }
 
-.social-links img {
-    width: 24px; /* Adjust size as needed */
-    height: auto;
-    vertical-align: middle;
-    margin: 0 10px; /* Spacing between icons */
-}
+@media (max-width: 520px) {
+  .entry-header {
+    flex-direction: column;
+  }
 
-/* Contact Form Styling */
-#contact-form {
-    max-width: 500px; /* Adjust based on your layout */
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f7f7f7;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+  dl {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
 
-#contact-form input,
-#contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Makes sure padding doesn't affect overall width */
-}
-
-#contact-form textarea {
-    height: 150px; /* Adjust height of the textarea */
-    resize: vertical; /* Allows the user to vertically resize the textarea */
-}
-
-#contact-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50; /* Theme color */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-#contact-form button:hover {
-    background-color: #45a049; /* Slightly darker shade on hover */
-}
-
-/* Responsive Design for the form */
-@media (max-width: 600px) {
-    #contact-form {
-        width: 90%;
-        margin: 20px auto;
-    }
-}
-
-.subfooter {
-    text-align: center;
-    padding: 20px;
-    background-color: #f2f2f2; /* Light background color for the subfooter */
-    border-top: 1px solid #ccc; /* Header line */
-    margin-top: auto;
-}
-
-.subfooter h3 {
-    margin-top: 0;
-    color: #333; /* Dark text color for contrast */
-    font-size: 1.5em; /* Adjust the size as needed */
-}
-
-.subfooter h4 {
-    margin-top: 10px;
-    color: #555; /* Slightly lighter color for the subheading */
-    font-size: 1.2em;
-}
-
-.subfooter p {
-    margin-top: 10px;
-    color: #666; /* Subtle text color for the paragraph */
-    max-width: 800px; /* Max width for better readability */
-    margin-left: auto;
-    margin-right: auto; /* Center the paragraph */
-}
-
-#contact-form h3 {
-    text-align: center;
+  dt {
+    margin-top: 0.75rem;
+  }
 }

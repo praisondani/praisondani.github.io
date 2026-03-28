@@ -222,7 +222,44 @@ footer {
 
 @media print {
   #sidenav { display: none; }
-  main { margin-left: 0; padding: 2rem; }
+
+  main {
+    margin-left: 0;
+    padding: 1.5rem 2rem;
+    max-width: 100%;
+  }
+
+  header {
+    margin-bottom: 1.5rem;
+  }
+
+  section {
+    padding: 1rem 0;
+  }
+
+  h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .role {
+    margin-bottom: 1rem;
+  }
+
+  ul li {
+    margin-bottom: 0.1rem;
+  }
+
+  .skill-row {
+    padding: 0.25rem 0;
+  }
+
+  .app-links {
+    gap: 1rem;
+  }
+
+  footer {
+    margin-top: 1.5rem;
+  }
 }
 
 /* ── Mobile ── */

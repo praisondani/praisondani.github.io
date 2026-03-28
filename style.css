@@ -32,7 +32,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-  border-right: 1px solid var(--border);
 }
 
 .sidenav a {
@@ -214,6 +213,18 @@ footer a {
 
 footer a:hover {
   color: var(--fg);
+}
+
+/* ── Print: hide sidenav ── */
+
+@media print {
+  .sidenav {
+    display: none;
+  }
+
+  .page {
+    margin-left: 0;
+  }
 }
 
 /* ── Mobile: hide sidenav ── */

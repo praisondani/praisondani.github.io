@@ -6,6 +6,9 @@
   <title>Praison Dani George</title>
   <link rel="icon" type="image/jpg" href="/assets/favicon.jpg">
   <link rel="stylesheet" href="style.css">
+  <script>
+    (function(){var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');})();
+  </script>
 </head>
 <body>
 
@@ -16,6 +19,7 @@
     <a href="#education">Education</a>
     <a href="#credentials">Credentials</a>
     <a href="#apps">Apps</a>
+    <button id="theme-toggle" aria-label="Toggle theme">☾</button>
   </nav>
 
   <main>
@@ -146,6 +150,18 @@
     }, { rootMargin: '-30% 0px -60% 0px' });
 
     sections.forEach(s => observer.observe(s));
+
+    // Theme toggle
+    var toggle = document.getElementById('theme-toggle');
+    function applyTheme(t) {
+      if (t === 'dark') { document.documentElement.setAttribute('data-theme', 'dark'); toggle.textContent = '☀'; }
+      else { document.documentElement.removeAttribute('data-theme'); toggle.textContent = '☾'; }
+      localStorage.setItem('theme', t);
+    }
+    applyTheme(localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+    toggle.addEventListener('click', function() {
+      applyTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
   </script>
 
 </body>

@@ -247,6 +247,14 @@ footer {
   color: var(--faint);
 }
 
+footer a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+footer a:hover { color: var(--fg); }
+
 /* ── Print ── */
 
 @media print {
